@@ -1,27 +1,28 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
-import ArticleComponent from "./Article"
+import Characters from "./Characters"
 
 function App() {
-  const [articles, setArticles] = useState([])
+  const [characters, setCharacters] = useState([])
 
   useEffect(() => {
-    fetch(insert url)
-    .then((response) => {
-      return response.json()
-      debugger
-    })
-    .then((data) => {
-      console.log(data)
-      setArticles(data)
-      //debugger
-    })
+    fetch("https://api.disneyapi.dev/characters")
+      .then((response) => {
+        return response.json()
+      })
+      .then((datas) => {
+        console.log(datas)
+        setCharacters(datas)
+      })
   }, [])
 
   return (
     <div className='App'>
-      {articles.map((article) => <ArticleComponent></ArticleComponent>)}
+      {
+      characters.map((characters) => {
+        return <Characters key={characters.id} {...characters}></Characters>
+      })
+    }
     </div>
   )
 }
