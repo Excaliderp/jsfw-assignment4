@@ -6,23 +6,32 @@ function App() {
   const [characters, setCharacters] = useState([])
 
   useEffect(() => {
-    fetch("https://api.disneyapi.dev/characters")
+    Characters(`      
+    {
+      characters(page: 5) {
+      items {
+        _id
+        name
+        imageUrl
+        films
+        tvShows
+      }
+    `) .then((response) => {
+      return response.json()
+    })
       .then((response) => {
-        return response.json()
-      })
-      .then((datas) => {
-        console.log(datas)
-        setCharacters(datas)
+        console.log(data)
+        setCharacters(data)
       })
   }, [])
 
   return (
     <div className='App'>
       {
-      characters.map((characters) => {
-        return <Characters key={characters.id} {...characters}></Characters>
-      })
-    }
+        Characters.map((characters) => {
+          return <Characters key={characters.id} {...characters}></Characters>
+        })
+      }
     </div>
   )
 }
