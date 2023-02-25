@@ -1,39 +1,32 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
-import Characters from "./Characters"
+// import ArticleComponent from './Characters'
 
 function App() {
-  const [characters, setCharacters] = useState([])
+  const [character, setCharacter] = useState([]);
+
+  const fetchCharacter = () => {
+    return fetch('https://jsonplaceholder.typicode.com/users')
+      .then((response) => response.json())
+      .then((data) => setCharacter(data))
+  }
 
   useEffect(() => {
-    Characters(`      
-    {
-      characters(page: 5) {
-      items {
-        _id
-        name
-        imageUrl
-        films
-        tvShows
-      }
-    `) .then((response) => {
-      return response.json()
-    })
-      .then((response) => {
-        console.log(data)
-        setCharacters(data)
-      })
-  }, [])
+    fetchCharacter()
 
+  }, [])
+  console.log(character)
   return (
     <div className='App'>
-      {
-        Characters.map((characters) => {
-          return <Characters key={characters.id} {...characters}></Characters>
-        })
-      }
+      <h1>Disney</h1>
+      {character.map((char, i) => (
+        <div key={i}>
+          <h2>{char.name}</h2>
+          <p>{char.email}</p>
+        </div>
+      ))}
     </div>
-  )
+  );
 }
 
 export default App
