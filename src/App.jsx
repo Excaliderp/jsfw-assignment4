@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
 import "./fonts/"
+import title from "./images/Title.png"
+import logo from "./images/logo.png"
 
 function App() {
   const [character, setCharacter] = useState([]);
@@ -23,8 +25,8 @@ function App() {
     <div className='App'>
       <main>
         <section className='left-container'>
-          <img className="icon" src="/static/images/Logo.png" />
-          <img className="title" src="/static/images/Title.png" />
+          <img className="icon" src={logo} />
+          <img className="title" src={title} />
           <div className='credit'>
             <p>Credit:</p>
           <a href='https://www.figma.com/community/file/1022881814667061459' target="_blank">Design</a>
