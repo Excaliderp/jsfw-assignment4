@@ -23,8 +23,8 @@ function App() {
     <div className='App'>
       <main>
         <section className='left-container'>
-          <img className="icon" src="./images/Logo.png" />
-          <img className="title" src="./images/Title.png" />
+          <img className="icon" src="/static/images/Logo.png" />
+          <img className="title" src="/static/images/Title.png" />
           <div className='credit'>
             <p>Credit:</p>
           <a href='https://www.figma.com/community/file/1022881814667061459' target="_blank">Design</a>
