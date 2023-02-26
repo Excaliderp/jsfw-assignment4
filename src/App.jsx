@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
 import "./fonts/"
-import title from "./assets/Title.png"
-import logo from "./assets/logo.png"
+import title from "../public/Title.png"
+import logo from "../public/logo.png"
 
 function App() {
   const [character, setCharacter] = useState([]);
