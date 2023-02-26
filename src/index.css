@@ -18,7 +18,7 @@ html {
 
 body {
   background-color: #151617;
-  background-image: url("./assets/topography.png");
+  background-image: url("/static/images/topography.png");
   background-repeat: inherit;
   height: 100%;
   margin: 0;
