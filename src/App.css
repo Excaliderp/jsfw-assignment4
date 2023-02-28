@@ -63,6 +63,9 @@ a:hover {
   width: 40%;
 }
 
+.left-container a {
+  color: #B6C3FD;
+}
 .left-container a:visited {
   color: #B6C3FD;
 }
